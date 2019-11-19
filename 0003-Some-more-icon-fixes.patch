@@ -1,4 +1,4 @@
-From 5d53bdf6a1935589f70bac8fedf7090cf86c15f0 Mon Sep 17 00:00:00 2001
+From f55cb2842025682376ca5df130809d97a47d95e2 Mon Sep 17 00:00:00 2001
 From: Ryan Gonzalez <rymg19@gmail.com>
 Date: Wed, 23 Oct 2019 15:09:10 -0500
 Subject: [PATCH 3/3] Some more icon fixes
@@ -42,5 +42,5 @@ index 975498a..a160c4c 100644
      $table{ 'emblem-important' }           = 'gtk-no';
      $table{ 'emblem-ok' }                  = 'gtk-yes';
 -- 
-2.21.0
+2.23.0
 

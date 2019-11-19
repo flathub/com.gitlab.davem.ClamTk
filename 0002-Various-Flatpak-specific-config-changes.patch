@@ -1,4 +1,4 @@
-From aeb544ec120748a41f5f738fb094183f7cfb5aab Mon Sep 17 00:00:00 2001
+From edd7fffacca9da83983c176bfa014762bf07d30b Mon Sep 17 00:00:00 2001
 From: Ryan Gonzalez <rymg19@gmail.com>
 Date: Wed, 23 Oct 2019 15:16:07 -0500
 Subject: [PATCH 2/3] Various Flatpak-specific config changes
@@ -74,7 +74,7 @@ index f6e94d1..54c2f25 100644
  
      # If the user selected "manual", that directory needs
 diff --git a/lib/Assistant.pm b/lib/Assistant.pm
-index 7d8d49b..e7b7386 100644
+index 594821e..64db644 100644
 --- a/lib/Assistant.pm
 +++ b/lib/Assistant.pm
 @@ -165,11 +165,7 @@ sub save {
@@ -91,5 +91,5 @@ index 7d8d49b..e7b7386 100644
                  if ( -e "$dir_list/daily.cld" ) {
                      copy( "$dir_list/daily.cld", "$paths/daily.cld" );
 -- 
-2.21.0
+2.23.0
 
