@@ -1,15 +1,26 @@
-From edd7fffacca9da83983c176bfa014762bf07d30b Mon Sep 17 00:00:00 2001
+From faba25c077575afac8da396a58909fc9776e7c09 Mon Sep 17 00:00:00 2001
 From: Ryan Gonzalez <rymg19@gmail.com>
-Date: Wed, 23 Oct 2019 15:16:07 -0500
+Date: Mon, 31 May 2021 20:16:26 -0500
 Subject: [PATCH 2/3] Various Flatpak-specific config changes
 
 ---
+ clamtk           |  2 +-
  lib/App.pm       | 29 ++++++-----------------------
  lib/Assistant.pm |  6 +-----
- 2 files changed, 7 insertions(+), 28 deletions(-)
+ 3 files changed, 8 insertions(+), 29 deletions(-)
 
+diff --git a/clamtk b/clamtk
+index 3f556c5..a1b6505 100755
+--- a/clamtk
++++ b/clamtk
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/app/bin/perl
+ #
+ # ClamTk, copyright (C) 2004-2021 Dave M
+ #
 diff --git a/lib/App.pm b/lib/App.pm
-index f6e94d1..54c2f25 100644
+index 514893c..847057f 100644
 --- a/lib/App.pm
 +++ b/lib/App.pm
 @@ -38,13 +38,13 @@ sub get_path {
@@ -28,20 +39,25 @@ index f6e94d1..54c2f25 100644
  
      # Trash directory - main
      $path->{ trash_dir } = $path->{ directory } . '/.local/share/Trash';
-@@ -86,27 +86,15 @@ sub get_path {
+@@ -86,11 +86,7 @@ sub get_path {
          = join( ';', $path->{ viruses }, '/sys/', '/dev/', '/proc/' );
  
      # Most times freshclam is under /usr/bin
 -    $path->{ freshclam }
--        = ( -e '/usr/bin/freshclam' ) ? '/usr/bin/freshclam'
+-        = ( -e '/usr/bin/freshclam' )       ? '/usr/bin/freshclam'
 -        : ( -e '/usr/local/bin/freshclam' ) ? '/usr/local/bin/freshclam'
 -        : ( -e '/opt/local/bin/freshclam' ) ? '/opt/local/bin/freshclam'
 -        :                                     '';
 +    $path->{ freshclam } = '/app/bin/freshclam';
  
+     # Most times freshclam.conf is under /etc
+     # If Update eq "shared":
+@@ -107,20 +103,12 @@ sub get_path {
+     # : '';
+ 
      # Use sigtool for db info
 -    $path->{ sigtool }
--        = ( -e '/usr/bin/sigtool' ) ? '/usr/bin/sigtool'
+-        = ( -e '/usr/bin/sigtool' )       ? '/usr/bin/sigtool'
 -        : ( -e '/usr/local/bin/sigtool' ) ? '/usr/local/bin/sigtool'
 -        : ( -e '/opt/local/bin/sigtool' ) ? '/opt/local/bin/sigtool'
 -        :                                   '';
@@ -51,7 +67,7 @@ index f6e94d1..54c2f25 100644
      # We'll use clampath as the actual path
      # and clamscan as clampath + scan options
 -    $path->{ clampath }
--        = ( -e '/usr/bin/clamscan' ) ? '/usr/bin/clamscan'
+-        = ( -e '/usr/bin/clamscan' )       ? '/usr/bin/clamscan'
 -        : ( -e '/usr/local/bin/clamscan' ) ? '/usr/local/bin/clamscan'
 -        : ( -e '/opt/local/bin/clamscan' ) ? '/opt/local/bin/clamscan'
 -        :                                    '';
@@ -59,7 +75,7 @@ index f6e94d1..54c2f25 100644
  
      $path->{ clamscan } = $path->{ clampath };
  
-@@ -141,12 +129,7 @@ sub get_daily_sigs_path {
+@@ -155,12 +143,7 @@ sub get_daily_sigs_path {
      # /var/clamav, so check that first.  Other distros will
      # likely find the defs under /var/lib/clamav.
      my @dirs = qw(
@@ -74,10 +90,10 @@ index f6e94d1..54c2f25 100644
  
      # If the user selected "manual", that directory needs
 diff --git a/lib/Assistant.pm b/lib/Assistant.pm
-index 594821e..64db644 100644
+index e2389b5..2bf8487 100644
 --- a/lib/Assistant.pm
 +++ b/lib/Assistant.pm
-@@ -165,11 +165,7 @@ sub save {
+@@ -167,11 +167,7 @@ sub save {
              # $d(aily) and $m(ain) signatures
              my ( $d, $m ) = ( 0 ) x 2;
              # Gtk3::main_iteration while Gtk3::events_pending;
@@ -91,5 +107,5 @@ index 594821e..64db644 100644
                  if ( -e "$dir_list/daily.cld" ) {
                      copy( "$dir_list/daily.cld", "$paths/daily.cld" );
 -- 
-2.23.0
+2.31.1
 

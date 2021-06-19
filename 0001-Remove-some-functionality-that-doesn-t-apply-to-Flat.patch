@@ -1,21 +1,21 @@
-From f9138d9394586e6a7d30d3c94b94bf85af7f3832 Mon Sep 17 00:00:00 2001
+From d8253b757c6cae4330efc19847ebbf772e2da614 Mon Sep 17 00:00:00 2001
 From: Ryan Gonzalez <rymg19@gmail.com>
-Date: Sat, 5 Oct 2019 16:46:13 -0500
+Date: Mon, 31 May 2021 20:13:37 -0500
 Subject: [PATCH 1/3] Remove some functionality that doesn't apply to Flatpaks
 
 ---
- lib/Assistant.pm | 37 +++++++++++++++++++------------------
+ lib/Assistant.pm | 10 ++++++----
  lib/GUI.pm       |  5 -----
  lib/Prefs.pm     | 12 +++---------
  lib/Settings.pm  | 15 ---------------
  lib/Startup.pm   | 15 ++-------------
- 5 files changed, 24 insertions(+), 60 deletions(-)
+ 5 files changed, 11 insertions(+), 46 deletions(-)
 
 diff --git a/lib/Assistant.pm b/lib/Assistant.pm
-index be8862e..594821e 100644
+index 02ece42..e2389b5 100644
 --- a/lib/Assistant.pm
 +++ b/lib/Assistant.pm
-@@ -29,13 +29,13 @@ sub show_window {
+@@ -30,13 +30,13 @@ sub show_window {
  
      # Get current update preference
      $pref = ClamTk::Prefs->get_preference( 'Update' );
@@ -32,7 +32,7 @@ index be8862e..594821e 100644
            )
      );
      #>>>
-@@ -53,6 +53,7 @@ sub show_window {
+@@ -54,6 +54,7 @@ sub show_window {
              undef,
              _('My computer automatically receives updates')
      );
@@ -40,7 +40,7 @@ index be8862e..594821e 100644
      $auto_button->signal_connect(
          toggled => sub {
              if( $auto_button->get_active ) {
-@@ -67,6 +68,7 @@ sub show_window {
+@@ -68,6 +69,7 @@ sub show_window {
      $man_button->set_label(
              _('I would like to update signatures myself')
      );
@@ -48,44 +48,17 @@ index be8862e..594821e 100644
      $man_button->signal_connect(
          toggled => sub {
              if( $man_button->get_active ) {
-@@ -90,21 +92,20 @@ sub show_window {
-     $infobar->set_message_type( 'other' );
-     $box->pack_start( $infobar, FALSE, FALSE, 10 );
+@@ -93,7 +95,7 @@ sub show_window {
  
--    $label = Gtk3::Label->new( _( 'Press Apply to save changes' ) );
--    $infobar->get_content_area->add( $label );
+     $label = Gtk3::Label->new( _( 'Press Apply to save changes' ) );
+     $infobar->get_content_area->add( $label );
 -    $infobar->add_button( 'gtk-apply', GTK_RESPONSE_APPLY );
--    $infobar->signal_connect(
--        response => sub {
--            my ( $bar, $sig, undef ) = @_;
--            # Gtk3::main_iteration while Gtk3::events_pending;
--            $label->set_text( _( 'Please wait...' ) );
--            if ( save() ) {
--                set_infobar_text( TRUE, $bar );
--            } else {
--                set_infobar_text( FALSE, $bar );
--            }
--        }
--    );
-+    # $label = Gtk3::Label->new( _( 'Press Apply to save changes' ) );
-+    # $infobar->get_content_area->add( $label );
-+    # $infobar->signal_connect(
-+    #     response => sub {
-+    #         my ( $bar, $sig, undef ) = @_;
-+    #         # Gtk3::main_iteration while Gtk3::events_pending;
-+    #         $label->set_text( _( 'Please wait...' ) );
-+    #         if ( save() ) {
-+    #             set_infobar_text( TRUE, $bar );
-+    #         } else {
-+    #             set_infobar_text( FALSE, $bar );
-+    #         }
-+    #     }
-+    # );
- 
-     $box->show_all();
-     return $box;
++    $infobar->add_button( 'gtk-apply', GTK_RESPONSE_APPLY )->set_sensitive( FALSE );
+     $infobar->signal_connect(
+         response => sub {
+             my ( $bar, $sig, undef ) = @_;
 diff --git a/lib/GUI.pm b/lib/GUI.pm
-index d1d7406..54abb26 100644
+index f32d484..2a48e54 100644
 --- a/lib/GUI.pm
 +++ b/lib/GUI.pm
 @@ -229,11 +229,6 @@ sub add_config_panels {
@@ -101,10 +74,10 @@ index d1d7406..54abb26 100644
  
      #<<<
 diff --git a/lib/Prefs.pm b/lib/Prefs.pm
-index 5991d9e..c92fe39 100644
+index 95cf815..64cebc6 100644
 --- a/lib/Prefs.pm
 +++ b/lib/Prefs.pm
-@@ -148,15 +148,9 @@ sub custom_prefs {
+@@ -151,15 +151,9 @@ sub custom_prefs {
      }
      close( $F );
  
@@ -124,10 +97,10 @@ index 5991d9e..c92fe39 100644
      # The proxy is off by default
      if ( !exists $pkg{ HTTPProxy } ) {
 diff --git a/lib/Settings.pm b/lib/Settings.pm
-index ead052e..6f7c08b 100644
+index 7a9ba1d..6df2a5f 100644
 --- a/lib/Settings.pm
 +++ b/lib/Settings.pm
-@@ -97,21 +97,6 @@ sub show_window {
+@@ -112,21 +112,6 @@ sub show_window {
          }
      );
  
@@ -136,7 +109,7 @@ index ead052e..6f7c08b 100644
 -    $option->set_tooltip_text(
 -        _( 'Check online for application and signature updates' ) );
 -    $option->set_active( TRUE ) if ( $prefs{ GUICheck } );
--    $grid->attach( $option, 0, 4, 1, 1 );
+-    $grid->attach( $option, 0, 5, 1, 1 );
 -    $option->signal_connect(
 -        toggled => sub {
 -            my $btn = shift;
@@ -150,7 +123,7 @@ index ead052e..6f7c08b 100644
      #$box->pack_start( $infobar, FALSE, FALSE, 10 );
      $infobar->set_message_type( 'other' );
 diff --git a/lib/Startup.pm b/lib/Startup.pm
-index 52e7bf3..fae61b8 100644
+index 140de25..b68c007 100644
 --- a/lib/Startup.pm
 +++ b/lib/Startup.pm
 @@ -21,14 +21,7 @@ use Time::Piece;
@@ -184,5 +157,5 @@ index 52e7bf3..fae61b8 100644
          return 0;
      }
 -- 
-2.23.0
+2.31.1
 
