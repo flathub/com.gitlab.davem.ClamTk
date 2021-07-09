@@ -1,0 +1,30 @@
+From 46c0d9750bf1599a9823d87838fc0935291ebaca Mon Sep 17 00:00:00 2001
+From: Ryan Gonzalez <rymg19@gmail.com>
+Date: Fri, 9 Jul 2021 12:07:38 -0500
+Subject: [PATCH 4/5] Update releases in appdata
+
+---
+ com.github.davetheunsub.clamtk.appdata.xml | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/com.github.davetheunsub.clamtk.appdata.xml b/com.github.davetheunsub.clamtk.appdata.xml
+index c6d0713..47e7f00 100644
+--- a/com.github.davetheunsub.clamtk.appdata.xml
++++ b/com.github.davetheunsub.clamtk.appdata.xml
+@@ -88,7 +88,12 @@
+  </screenshots>
+ 
+  <releases>
+-    <release version="6.12" date="2021-06-05">
++    <release version="6.13" date="2021-07-07">
++      <description>
++        <p>Fixes for appdata.xml</p>
++      </description>
++    </release>
++    <release version="6.12" date="2021-07-05">
+       <description>
+         <p>Bug fixes</p>
+       </description>
+-- 
+2.31.1
+
