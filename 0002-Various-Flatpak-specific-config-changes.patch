@@ -1,7 +1,7 @@
-From faba25c077575afac8da396a58909fc9776e7c09 Mon Sep 17 00:00:00 2001
+From e158702c2b77576e0b0c8dd678ad8175e5651004 Mon Sep 17 00:00:00 2001
 From: Ryan Gonzalez <rymg19@gmail.com>
 Date: Mon, 31 May 2021 20:16:26 -0500
-Subject: [PATCH 2/3] Various Flatpak-specific config changes
+Subject: [PATCH 2/5] Various Flatpak-specific config changes
 
 ---
  clamtk           |  2 +-
@@ -20,7 +20,7 @@ index 3f556c5..a1b6505 100755
  # ClamTk, copyright (C) 2004-2021 Dave M
  #
 diff --git a/lib/App.pm b/lib/App.pm
-index 514893c..847057f 100644
+index 7adc114..ba6ae4a 100644
 --- a/lib/App.pm
 +++ b/lib/App.pm
 @@ -38,13 +38,13 @@ sub get_path {

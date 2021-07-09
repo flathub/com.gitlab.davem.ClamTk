@@ -99,16 +99,18 @@ modules:
         cp -r lib $sitelib/ClamTk
       - 'install -Dm 644 clamtk.desktop /app/share/applications/com.gitlab.davem.ClamTk.desktop'
       - 'install -Dm 644 images/clamtk.png /app/share/icons/hicolor/128x128/apps/clamtk.png'
-      - 'install -Dm 644 com.gitlab.davem.ClamTk.metainfo.xml /app/share/metainfo/com.gitlab.davem.ClamTk.metainfo.xml'
+      - 'install -Dm 644 com.gitlab.davem.ClamTk.metainfo.xml -t /app/share/metainfo'
     sources:
       - type: archive
-        url: https://github.com/dave-theunsub/clamtk/releases/download/v6.11/clamtk-6.11.tar.xz
-        sha256: 93d0f265ad216984673ed261a24815f32c459d699148668ef460baf390de02a1
+        url: https://github.com/dave-theunsub/clamtk/releases/download/v6.13/clamtk-6.13.tar.xz
+        sha256: 91bc42b761d32c4b72a0cdb341dfe06949179796d1f4b05a22090c0047d92d58
       - type: patch
         path: 0001-Remove-some-functionality-that-doesn-t-apply-to-Flat.patch
       - type: patch
         path: 0002-Various-Flatpak-specific-config-changes.patch
       - type: patch
         path: 0003-Some-more-icon-fixes.patch
-      - type: file
-        path: com.gitlab.davem.ClamTk.metainfo.xml
+      - type: patch
+        path: 0004-Update-releases-in-appdata.patch
+      - type: patch
+        path: 0005-Flatpak-specific-appdata-changes.patch

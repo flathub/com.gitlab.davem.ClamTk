@@ -1,7 +1,7 @@
-From 8e7be16ed5d08cb42e7347c04030d7b61c86741b Mon Sep 17 00:00:00 2001
+From 039ecb4aae924509331d296ba587619a340397b6 Mon Sep 17 00:00:00 2001
 From: Ryan Gonzalez <rymg19@gmail.com>
 Date: Mon, 31 May 2021 20:17:54 -0500
-Subject: [PATCH 3/3] Some more icon fixes
+Subject: [PATCH 3/5] Some more icon fixes
 
 ---
  lib/Analysis.pm | 2 +-
