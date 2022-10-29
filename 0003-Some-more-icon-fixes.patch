@@ -1,15 +1,15 @@
-From 039ecb4aae924509331d296ba587619a340397b6 Mon Sep 17 00:00:00 2001
-From: Ryan Gonzalez <rymg19@gmail.com>
-Date: Mon, 31 May 2021 20:17:54 -0500
-Subject: [PATCH 3/5] Some more icon fixes
+From c72636735275db3d1d0125347bf73e4b036cfe9c Mon Sep 17 00:00:00 2001
+From: bbhtt <62639087+bbhtt@users.noreply.github.com>
+Date: Tue, 24 May 2022 06:52:05 +0530
+Subject: [PATCH] Icon fixes
 
 ---
  lib/Analysis.pm | 2 +-
- lib/Icons.pm    | 3 +--
- 2 files changed, 2 insertions(+), 3 deletions(-)
+ lib/Icons.pm    | 1 -
+ 2 files changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/lib/Analysis.pm b/lib/Analysis.pm
-index 55cb8b6..643ee4c 100644
+index 50d8852..0158da8 100644
 --- a/lib/Analysis.pm
 +++ b/lib/Analysis.pm
 @@ -250,7 +250,7 @@ sub analysis_frame_one {
@@ -19,20 +19,13 @@ index 55cb8b6..643ee4c 100644
 -    my $use_image = ClamTk::Icons->get_image('edit-select');
 +    my $use_image = ClamTk::Icons->get_image('edit-find');
      $button->set_icon_name($use_image);
- 
+
      my $select_button
 diff --git a/lib/Icons.pm b/lib/Icons.pm
-index c4c2452..947776e 100644
+index b4955f3..9355d2b 100644
 --- a/lib/Icons.pm
 +++ b/lib/Icons.pm
-@@ -30,13 +30,12 @@ sub get_image() {
-     $table{ 'alarm' }                      = 'gtk-properties';
-     $table{ 'document-new' }               = 'gtk-file';
-     $table{ 'document-print' }             = 'gtk-print';
--    $table{ 'document-properties' }        = 'document-properties';
-+    $table{ 'document-properties' }        = 'gtk-properties';
-     $table{ 'document-save' }              = 'gtk-apply';
-     $table{ 'document-save-as' }           = 'gtk-save-as';
+@@ -36,7 +36,6 @@ sub get_image() {
      $table{ 'document-send' }              = 'gtk-index';
      $table{ 'edit-delete' }                = 'gtk-delete';
      $table{ 'edit-find' }                  = 'gtk-find';
@@ -40,6 +33,5 @@ index c4c2452..947776e 100644
      $table{ 'edit-undo' }                  = 'gtk-undelete';
      $table{ 'emblem-important' }           = 'gtk-no';
      $table{ 'folder-documents' }           = 'gtk-directory';
--- 
-2.31.1
-
+--
+2.36.1

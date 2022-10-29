@@ -11,7 +11,7 @@ finish-args:
   - '--filesystem=host'
   - '--share=ipc'
   - '--share=network'
-  - '--socket=x11'
+  - '--socket=fallback-x11'
   - '--socket=wayland'
 modules:
   # Based on https://github.com/flathub/io.github.Hexchat.Plugin.Perl
@@ -25,8 +25,8 @@ modules:
       ldflags: '-fpic'
     sources:
       - type: archive
-        url: https://www.cpan.org/src/5.0/perl-5.34.0.tar.gz
-        sha256: 551efc818b968b05216024fb0b727ef2ad4c100f8cb6b43fab615fa78ae5be9a
+        url: https://www.cpan.org/src/5.0/perl-5.36.0.tar.gz
+        sha256: e26085af8ac396f62add8a533c3a0ea8c8497d836f0689347ac5abd7b7a4e00a
       - type: shell
         commands:
           - 'ln -s configure{.gnu,}'
@@ -124,8 +124,8 @@ modules:
       - 'install -Dm 644 com.gitlab.davem.ClamTk.metainfo.xml -t /app/share/metainfo'
     sources:
       - type: archive
-        url: https://github.com/dave-theunsub/clamtk/releases/download/v6.13/clamtk-6.13.tar.xz
-        sha256: 91bc42b761d32c4b72a0cdb341dfe06949179796d1f4b05a22090c0047d92d58
+        url: https://github.com/dave-theunsub/clamtk/releases/download/v6.14/clamtk-6.14.tar.xz
+        sha256: 05e4755ab096b8193c5b5dbdfcf1a8524728ed35558301a32270162b24e22f84
       - type: patch
         path: 0001-Remove-some-functionality-that-doesn-t-apply-to-Flat.patch
       - type: patch
