@@ -180,6 +180,12 @@
       "url": "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.02.tar.gz"
    },
    {
+      "dest": "perl-libs/Clone",
+      "sha256": "aadeed5e4c8bd6bbdf68c0dd0066cb513e16ab9e5b4382dc4a0aafd55890697b",
+      "type": "archive",
+      "url": "https://www.cpan.org/modules/by-module/Clone/Clone-0.46.tar.gz"
+   },
+   {
       "commands": [
          "set -e",
          "function make_install {",
@@ -223,7 +229,8 @@
          "(make_install perl-libs/HTTP-Cookies)",
          "(make_install perl-libs/libwww-perl)",
          "(make_install perl-libs/LWP-Protocol-https)",
-         "(make_install perl-libs/Text-CSV)"
+         "(make_install perl-libs/Text-CSV)",
+         "(make_install perl-libs/Clone)"
       ],
       "dest": "perl-libs",
       "dest-filename": "install.sh",
