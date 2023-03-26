@@ -94,13 +94,14 @@ modules:
       - '-DENABLE_MILTER=OFF'
       - '-DENABLE_CLAMONACC=OFF'
       - '-DENABLE_TESTS=OFF'
+      - '-DENABLE_EXAMPLES=OFF'
       - '-DENABLE_SYSTEMD=OFF'
       - '-DENABLE_MAN_PAGES=OFF'
       - '-DDATABASE_DIRECTORY=/var/data/clamav'
     sources:
       - type: archive
-        url: https://www.clamav.net/downloads/production/clamav-0.105.1.tar.gz
-        sha256: d2bc16374db889a6e5a6ac40f8c6e700254a039acaa536885a09eeea4b8529f6
+        url: https://www.clamav.net/downloads/production/clamav-1.0.1.tar.gz
+        sha256: 0872dc1b82ff4cd7e8e4323faf5ee41a1f66ae80865d05429085b946355d86ee
     post-install:
       - 'sed "s/^Example/#Example/" /app/etc/freshclam.conf.sample > /app/etc/freshclam.conf'
     cleanup:
