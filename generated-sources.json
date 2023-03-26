@@ -55,9 +55,9 @@
    },
    {
       "dest": "perl-libs/Net-SSLeay",
-      "sha256": "876d022fbc719631b11d6bb4b6e78db3c19bbca578093c376c8f9900a4432aa3",
+      "sha256": "1a11d1ae63e9fc85c90279085957aec81a15af985d7cff185b66154f7032fcdf",
       "type": "archive",
-      "url": "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.93_01.tar.gz"
+      "url": "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.93_02.tar.gz"
    },
    {
       "dest": "perl-libs/Mozilla-CA",
@@ -67,15 +67,15 @@
    },
    {
       "dest": "perl-libs/IO-Socket-SSL",
-      "sha256": "c30ee2220b1e181a968ebbc81861d0cadf334b001377a44105ae5a8637ddae8c",
+      "sha256": "07bdf826a8d6b463316d241451c890d1012fa2499a83d8e3d00ce0a584618443",
       "type": "archive",
-      "url": "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.075.tar.gz"
+      "url": "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.081.tar.gz"
    },
    {
       "dest": "perl-libs/URI",
-      "sha256": "4cd2752adfaddd58f54e559155578696354834ee77a7760a04089de1f338fb11",
+      "sha256": "5f7e42b769cb27499113cfae4b786c37d49e7c7d32dbb469602cd808308568f8",
       "type": "archive",
-      "url": "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.16.tar.gz"
+      "url": "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.17.tar.gz"
    },
    {
       "dest": "perl-libs/Net-HTTP",
@@ -115,9 +115,9 @@
    },
    {
       "dest": "perl-libs/HTTP-Message",
-      "sha256": "2183e1a8dfaef79309eae1d3902c5d9d42b516eb0a297be039862fb2aa3afa07",
+      "sha256": "398b647bf45aa972f432ec0111f6617742ba32fc773c6612d21f64ab4eacbca1",
       "type": "archive",
-      "url": "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Message-6.41.tar.gz"
+      "url": "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Message-6.44.tar.gz"
    },
    {
       "dest": "perl-libs/HTML-Tagset",
@@ -127,9 +127,9 @@
    },
    {
       "dest": "perl-libs/HTML-Parser",
-      "sha256": "b934907d37b58e5b13f9b374a21e177645439ebcb44900cd37329b0c48893cdc",
+      "sha256": "c0910a5c8f92f8817edd06ccfd224ba1c2ebe8c10f551f032587a1fc83d62ff2",
       "type": "archive",
-      "url": "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTML-Parser-3.79.tar.gz"
+      "url": "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTML-Parser-3.81.tar.gz"
    },
    {
       "dest": "perl-libs/WWW-RobotRules",
@@ -163,9 +163,9 @@
    },
    {
       "dest": "perl-libs/libwww-perl",
-      "sha256": "96eec40a3fd0aa1bd834117be5eb21c438f73094d861a1a7e5774f0b1226b723",
+      "sha256": "42784a5869855ee08522dfb1d30fccf98ca4ddefa8c6c1bcb0d68a0adceb7f01",
       "type": "archive",
-      "url": "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-6.67.tar.gz"
+      "url": "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-6.68.tar.gz"
    },
    {
       "dest": "perl-libs/LWP-Protocol-https",
