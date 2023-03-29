@@ -1,23 +1,19 @@
-From c4971714e6def404896200af5bdbfb262ab0ee77 Mon Sep 17 00:00:00 2001
-From: Ryan Gonzalez <rymg19@gmail.com>
-Date: Fri, 9 Jul 2021 12:08:39 -0500
-Subject: [PATCH 5/5] Flatpak-specific appdata changes
+From 75b5695141ab15e89bba0c80c3fae9f531319c5d Mon Sep 17 00:00:00 2001
+From: bbhtt <bbhtt.zn0i8@slmail.me>
+Date: Mon, 10 Apr 2023 19:20:13 +0530
+Subject: [PATCH] Flatpak-specific appdata changes
 
 ---
- ...mtk.appdata.xml => com.gitlab.davem.ClamTk.metainfo.xml | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
- rename com.github.davetheunsub.clamtk.appdata.xml => com.gitlab.davem.ClamTk.metainfo.xml (97%)
+ com.github.davetheunsub.clamtk.appdata.xml | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/com.github.davetheunsub.clamtk.appdata.xml b/com.gitlab.davem.ClamTk.metainfo.xml
-similarity index 97%
-rename from com.github.davetheunsub.clamtk.appdata.xml
-rename to com.gitlab.davem.ClamTk.metainfo.xml
-index 47e7f00..7c2685f 100644
+diff --git a/com.github.davetheunsub.clamtk.appdata.xml b/com.github.davetheunsub.clamtk.appdata.xml
+index 231cee6..58385b4 100644
 --- a/com.github.davetheunsub.clamtk.appdata.xml
-+++ b/com.gitlab.davem.ClamTk.metainfo.xml
++++ b/com.github.davetheunsub.clamtk.appdata.xml
 @@ -1,8 +1,8 @@
  <?xml version="1.0" encoding="UTF-8"?>
- <!-- Copyright 2021 Dave M <dave.nerd@gmail.com> -->
+ <!-- Copyright 2022 Dave M <dave.nerd@gmail.com> -->
  <component type="desktop-application">
 - <id>com.github.davetheunsub.clamtk</id>
 - <launchable type="desktop-id">clamtk.desktop</launchable>
@@ -26,16 +22,14 @@ index 47e7f00..7c2685f 100644
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>ClamTk</name>
-@@ -99,6 +99,9 @@
+@@ -94,6 +94,7 @@
        </description>
      </release>
    </releases>
-+
 + <content_rating type="oars-1.1"/>
-+
   <update_contact>dave.nerd@gmail.com</update_contact>
   <url type="homepage">https://github.com/dave-theunsub/clamtk/</url>
   <url type="bugtracker">https://bugzilla.redhat.com/buglist.cgi?quicksearch=clamtk</url>
 -- 
-2.31.1
+2.40.0
 

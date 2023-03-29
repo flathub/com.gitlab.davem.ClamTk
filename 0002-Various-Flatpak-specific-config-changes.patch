@@ -1,7 +1,7 @@
-From e158702c2b77576e0b0c8dd678ad8175e5651004 Mon Sep 17 00:00:00 2001
-From: Ryan Gonzalez <rymg19@gmail.com>
-Date: Mon, 31 May 2021 20:16:26 -0500
-Subject: [PATCH 2/5] Various Flatpak-specific config changes
+From 6bfb4417e4e7d5abb9a9334da179cf77c8edd289 Mon Sep 17 00:00:00 2001
+From: bbhtt <bbhtt.zn0i8@slmail.me>
+Date: Wed, 29 Mar 2023 06:57:51 +0530
+Subject: [PATCH] Various Flatpak-specific config changes
 
 ---
  clamtk           |  2 +-
@@ -10,17 +10,17 @@ Subject: [PATCH 2/5] Various Flatpak-specific config changes
  3 files changed, 8 insertions(+), 29 deletions(-)
 
 diff --git a/clamtk b/clamtk
-index 3f556c5..a1b6505 100755
+index 6d4477c..2df3bba 100755
 --- a/clamtk
 +++ b/clamtk
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl
 +#!/app/bin/perl
  #
- # ClamTk, copyright (C) 2004-2021 Dave M
+ # ClamTk, copyright (C) 2004-2022 Dave M
  #
 diff --git a/lib/App.pm b/lib/App.pm
-index 7adc114..ba6ae4a 100644
+index 0a33fec..160da0c 100644
 --- a/lib/App.pm
 +++ b/lib/App.pm
 @@ -38,13 +38,13 @@ sub get_path {
@@ -75,7 +75,7 @@ index 7adc114..ba6ae4a 100644
  
      $path->{ clamscan } = $path->{ clampath };
  
-@@ -155,12 +143,7 @@ sub get_daily_sigs_path {
+@@ -166,12 +154,7 @@ sub get_daily_sigs_path {
      # /var/clamav, so check that first.  Other distros will
      # likely find the defs under /var/lib/clamav.
      my @dirs = qw(
@@ -90,10 +90,10 @@ index 7adc114..ba6ae4a 100644
  
      # If the user selected "manual", that directory needs
 diff --git a/lib/Assistant.pm b/lib/Assistant.pm
-index e2389b5..2bf8487 100644
+index 485723c..93afc43 100644
 --- a/lib/Assistant.pm
 +++ b/lib/Assistant.pm
-@@ -167,11 +167,7 @@ sub save {
+@@ -166,11 +166,7 @@ sub save {
              # $d(aily) and $m(ain) signatures
              my ( $d, $m ) = ( 0 ) x 2;
              # Gtk3::main_iteration while Gtk3::events_pending;
@@ -107,5 +107,5 @@ index e2389b5..2bf8487 100644
                  if ( -e "$dir_list/daily.cld" ) {
                      copy( "$dir_list/daily.cld", "$paths/daily.cld" );
 -- 
-2.31.1
+2.40.0
 

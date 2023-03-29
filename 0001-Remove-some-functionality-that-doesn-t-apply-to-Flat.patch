@@ -1,18 +1,18 @@
-From bff8b99c74fd26b6663d184cbcb26ccddca8dd49 Mon Sep 17 00:00:00 2001
-From: Ryan Gonzalez <rymg19@gmail.com>
-Date: Mon, 31 May 2021 20:13:37 -0500
-Subject: [PATCH 1/5] Remove some functionality that doesn't apply to Flatpaks
+From 9e82a57442d2cbe253af20f83f8a62eacdc3bc68 Mon Sep 17 00:00:00 2001
+From: bbhtt <bbhtt.zn0i8@slmail.me>
+Date: Wed, 29 Mar 2023 06:52:16 +0530
+Subject: [PATCH] Remove some functionality that doesn't apply to Flatpaks
 
 ---
  lib/Assistant.pm | 10 ++++++----
  lib/GUI.pm       |  5 -----
  lib/Prefs.pm     | 12 +++---------
  lib/Settings.pm  | 15 ---------------
- lib/Startup.pm   | 15 ++-------------
- 5 files changed, 11 insertions(+), 46 deletions(-)
+ lib/Startup.pm   | 18 ++----------------
+ 5 files changed, 11 insertions(+), 49 deletions(-)
 
 diff --git a/lib/Assistant.pm b/lib/Assistant.pm
-index 02ece42..e2389b5 100644
+index ee8be83..44d00cc 100644
 --- a/lib/Assistant.pm
 +++ b/lib/Assistant.pm
 @@ -30,13 +30,13 @@ sub show_window {
@@ -58,7 +58,7 @@ index 02ece42..e2389b5 100644
          response => sub {
              my ( $bar, $sig, undef ) = @_;
 diff --git a/lib/GUI.pm b/lib/GUI.pm
-index a9d3bdf..c7204c7 100644
+index d6ad9ec..04db94d 100644
 --- a/lib/GUI.pm
 +++ b/lib/GUI.pm
 @@ -229,11 +229,6 @@ sub add_config_panels {
@@ -74,7 +74,7 @@ index a9d3bdf..c7204c7 100644
  
      #<<<
 diff --git a/lib/Prefs.pm b/lib/Prefs.pm
-index 95cf815..64cebc6 100644
+index 8b320b1..c97dff1 100644
 --- a/lib/Prefs.pm
 +++ b/lib/Prefs.pm
 @@ -151,15 +151,9 @@ sub custom_prefs {
@@ -97,7 +97,7 @@ index 95cf815..64cebc6 100644
      # The proxy is off by default
      if ( !exists $pkg{ HTTPProxy } ) {
 diff --git a/lib/Settings.pm b/lib/Settings.pm
-index 7a9ba1d..6df2a5f 100644
+index f671158..ea4ce6f 100644
 --- a/lib/Settings.pm
 +++ b/lib/Settings.pm
 @@ -112,21 +112,6 @@ sub show_window {
@@ -123,7 +123,7 @@ index 7a9ba1d..6df2a5f 100644
      #$box->pack_start( $infobar, FALSE, FALSE, 10 );
      $infobar->set_message_type( 'other' );
 diff --git a/lib/Startup.pm b/lib/Startup.pm
-index 140de25..b68c007 100644
+index c24a333..f9fd67a 100644
 --- a/lib/Startup.pm
 +++ b/lib/Startup.pm
 @@ -21,14 +21,7 @@ use Time::Piece;
@@ -133,7 +133,7 @@ index 140de25..b68c007 100644
 -    my ( $sigs_outdated, $gui_outdated );
 -
 -    # If the user wants a GUI update check on startup:
--    if ( ClamTk::Prefs->get_preference( 'GUICheck' ) ) {
+-    if ( ClamTk::Prefs->get_preference('GUICheck') ) {
 -        if ( check_gui() ) {
 -            $gui_outdated++;
 -        }
@@ -142,20 +142,24 @@ index 140de25..b68c007 100644
  
      # Check AV date - 4 days and sound the alarm
      my $t        = localtime;
-@@ -44,12 +37,8 @@ sub startup_check {
+@@ -43,16 +36,9 @@ sub startup_check {
+     if ( int( $diff->days ) >= 4 ) {
          $sigs_outdated++;
      }
- 
+-
 -    if ( $sigs_outdated && $gui_outdated ) {
 -        return 'both';
--    } elsif ( $sigs_outdated ) {
+-    }
+-    elsif ($sigs_outdated) {
 +    if ( $sigs_outdated ) {
          return 'sigs';
--    } elsif ( $gui_outdated ) {
+     }
+-    elsif ($gui_outdated) {
 -        return 'gui';
-     } else {
+-    }
+     else {
          return 0;
      }
 -- 
-2.31.1
+2.40.0
 
