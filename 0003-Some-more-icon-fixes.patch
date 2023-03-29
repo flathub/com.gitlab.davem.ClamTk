@@ -1,7 +1,7 @@
-From c72636735275db3d1d0125347bf73e4b036cfe9c Mon Sep 17 00:00:00 2001
-From: bbhtt <62639087+bbhtt@users.noreply.github.com>
-Date: Tue, 24 May 2022 06:52:05 +0530
-Subject: [PATCH] Icon fixes
+From cb4c8951d4987ac37d65b6c49e207470e9379c76 Mon Sep 17 00:00:00 2001
+From: bbhtt <bbhtt.zn0i8@slmail.me>
+Date: Wed, 29 Mar 2023 07:33:53 +0530
+Subject: [PATCH] Some more icon fixes
 
 ---
  lib/Analysis.pm | 2 +-
@@ -9,17 +9,17 @@ Subject: [PATCH] Icon fixes
  2 files changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/lib/Analysis.pm b/lib/Analysis.pm
-index 50d8852..0158da8 100644
+index 8ed70e9..ff8f7d1 100644
 --- a/lib/Analysis.pm
 +++ b/lib/Analysis.pm
-@@ -250,7 +250,7 @@ sub analysis_frame_one {
+@@ -253,7 +253,7 @@ sub analysis_frame_one {
      #<<<
      # Declaring this now for setting sensitive/insensitive
      my $button = Gtk3::ToolButton->new();
 -    my $use_image = ClamTk::Icons->get_image('edit-select');
 +    my $use_image = ClamTk::Icons->get_image('edit-find');
      $button->set_icon_name($use_image);
-
+ 
      my $select_button
 diff --git a/lib/Icons.pm b/lib/Icons.pm
 index b4955f3..9355d2b 100644
@@ -33,5 +33,6 @@ index b4955f3..9355d2b 100644
      $table{ 'edit-undo' }                  = 'gtk-undelete';
      $table{ 'emblem-important' }           = 'gtk-no';
      $table{ 'folder-documents' }           = 'gtk-directory';
---
-2.36.1
+-- 
+2.40.0
+
