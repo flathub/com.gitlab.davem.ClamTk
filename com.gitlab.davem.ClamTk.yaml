@@ -125,8 +125,8 @@ modules:
       - 'install -Dm 644 com.github.davetheunsub.clamtk.appdata.xml /app/share/metainfo/${FLATPAK_ID}.metainfo.xml'
     sources:
       - type: archive
-        url: https://github.com/dave-theunsub/clamtk/releases/download/v6.15/clamtk-6.15.tar.xz
-        sha256: 1c6ac74db9055d02810e6e689f7b02c9216815113a4dad79336d84da51d20e4c
+        url: https://github.com/dave-theunsub/clamtk/releases/download/v6.16/clamtk-6.16.tar.xz
+        sha256: ff316066067078408b0cc6a09029f77c5b521f6abeb016311a338fdc98391a00
       - type: patch
         path: 0001-Remove-some-functionality-that-doesn-t-apply-to-Flat.patch
       - type: patch
