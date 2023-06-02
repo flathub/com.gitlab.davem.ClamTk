@@ -1,24 +1,35 @@
-From 562d882e04d2d4e20ed7af4b868c1292b682550e Mon Sep 17 00:00:00 2001
+From 0058ede1d709e6422edb7071e0f5479e928d31ee Mon Sep 17 00:00:00 2001
 From: bbhtt <bbhtt.zn0i8@slmail.me>
-Date: Wed, 29 Mar 2023 07:39:07 +0530
+Date: Fri, 2 Jun 2023 19:58:09 +0530
 Subject: [PATCH] Update releases in appdata
 
 ---
- com.github.davetheunsub.clamtk.appdata.xml | 14 ++++++++++++--
- 1 file changed, 12 insertions(+), 2 deletions(-)
+ com.github.davetheunsub.clamtk.appdata.xml | 25 ++++++++++++++++++++--
+ 1 file changed, 23 insertions(+), 2 deletions(-)
 
 diff --git a/com.github.davetheunsub.clamtk.appdata.xml b/com.github.davetheunsub.clamtk.appdata.xml
-index 9a39c64..5d5316b 100644
+index 9a39c64..137999f 100644
 --- a/com.github.davetheunsub.clamtk.appdata.xml
 +++ b/com.github.davetheunsub.clamtk.appdata.xml
-@@ -88,9 +88,19 @@
+@@ -88,9 +88,30 @@
   </screenshots>
-
+ 
   <releases>
 -    <release version="6.15" date="2022-12-26">
-+    <release version="6.15" date="2023-03-28">
++    <release version="6.16" date="2023-06-02">
        <description>
 -        <p>Bug fixes</p>
++        <p>Fix for Virustotal privacy warning before upload or sending file hash only</p>
++        <p>Fix for New debs are made with tar.zst</p>
++        <p>Remove (hopefully) no longer needed lines; improve a few others (Scan.pm)</p>
++        <p>Updated language files: Dutch (nl)</p>
++        <p>Update README and site links for updated GPG key</p>
++        <p>Minor cleanup of man page</p>
++        <p>Update year from 2022 -> 2023</p>
++      </description>
++    </release>
++    <release version="6.15" date="2023-03-28">
++      <description>
 +        <p>Fix for Unable to delete previous analysis result</p>
 +      </description>
 +    </release>
@@ -33,6 +44,6 @@ index 9a39c64..5d5316b 100644
        </description>
      </release>
    </releases>
---
-2.40.0
+-- 
+2.40.1
 
