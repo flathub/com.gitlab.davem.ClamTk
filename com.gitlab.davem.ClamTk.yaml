@@ -26,7 +26,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/Perl/perl5/archive/refs/tags/v5.43.6.tar.gz
-        sha256: e093ef184d7f9a1b9797e2465296f55510adb6dab8842b0c3ed53329663096dc
+        sha256: 88d817cbce820973d628e4c4579eb3cdfd1018d1707c5976150f2d9590d508e4
         x-checker-data:
           type: anitya
           project-id: 13599
@@ -109,7 +109,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/Cisco-Talos/clamav/archive/refs/tags/clamav-1.5.1.tar.gz
-        sha256: 64fe4a16a5622c1d71efe9ed7f2c2fbd37f8f237da9f11ff66b73038df71db91
+        sha256: 94cd2c7992b6ae69b09951a857777619ec14451b0ae7bb0fc914c8fb26f4d408
         x-checker-data:
           type: anitya
           project-id: 291
