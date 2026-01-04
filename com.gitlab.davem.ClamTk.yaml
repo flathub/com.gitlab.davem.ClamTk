@@ -26,7 +26,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/Perl/perl5/archive/refs/tags/v5.42.0.tar.gz
-        sha256: e093ef184d7f9a1b9797e2465296f55510adb6dab8842b0c3ed53329663096dc
+        sha256: e2bb05cea46921009b7902b927b58110949c4f8e51b0583f57e3e1eeff5306d8
         x-checker-data:
           type: anitya
           project-id: 13599
