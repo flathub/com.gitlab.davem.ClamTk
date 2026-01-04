@@ -25,12 +25,8 @@ modules:
       ldflags: '-fpic'
     sources:
       - type: archive
-        url: https://github.com/Perl/perl5/archive/refs/tags/v5.43.6.tar.gz
-        sha256: 88d817cbce820973d628e4c4579eb3cdfd1018d1707c5976150f2d9590d508e4
-        x-checker-data:
-          type: anitya
-          project-id: 13599
-          url-template: https://github.com/Perl/perl5/archive/refs/tags/v$version.tar.gz
+        url: https://www.cpan.org/src/5.0/perl-5.42.0.tar.gz
+        sha256: e093ef184d7f9a1b9797e2465296f55510adb6dab8842b0c3ed53329663096dc
       - type: shell
         commands:
           - 'ln -s configure{.gnu,}'
