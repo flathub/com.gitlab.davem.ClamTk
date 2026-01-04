@@ -75,6 +75,7 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - '-DCMAKE_BUILD_TYPE=RelWithDebInfo'
+      - '-DCMAKE_POLICY_VERSION_MINIMUM=3.5'
     sources:
       - type: archive
         url: https://github.com/json-c/json-c/archive/refs/tags/json-c-0.18-20240915.tar.gz
