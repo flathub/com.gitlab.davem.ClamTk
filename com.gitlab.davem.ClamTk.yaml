@@ -25,8 +25,12 @@ modules:
       ldflags: '-fpic'
     sources:
       - type: archive
-        url: https://www.cpan.org/src/5.0/perl-5.42.0.tar.gz
+        url: https://github.com/Perl/perl5/archive/refs/tags/v5.43.6.tar.gz
         sha256: e093ef184d7f9a1b9797e2465296f55510adb6dab8842b0c3ed53329663096dc
+        x-checker-data:
+          type: anitya
+          project-id: 13599
+          url-template: https://github.com/Perl/perl5/archive/refs/tags/v$version.tar.gz
       - type: shell
         commands:
           - 'ln -s configure{.gnu,}'
@@ -79,6 +83,10 @@ modules:
       - type: archive
         url: https://github.com/json-c/json-c/archive/refs/tags/json-c-0.18-20240915.tar.gz
         sha256: 3112c1f25d39eca661fe3fc663431e130cc6e2f900c081738317fba49d29e298
+        x-checker-data:
+          type: anitya
+          project-id: 1477
+          url-template: https://github.com/json-c/json-c/archive/refs/tags/json-c-$version.tar.gz
     cleanup:
       - '/include'
       - '/lib/cmake'
@@ -100,8 +108,12 @@ modules:
       - '-DDATABASE_DIRECTORY=/var/data/clamav'
     sources:
       - type: archive
-        url: https://www.clamav.net/downloads/production/clamav-1.5.1.tar.gz
+        url: https://github.com/Cisco-Talos/clamav/archive/refs/tags/clamav-1.5.1.tar.gz
         sha256: 64fe4a16a5622c1d71efe9ed7f2c2fbd37f8f237da9f11ff66b73038df71db91
+        x-checker-data:
+          type: anitya
+          project-id: 291
+          url-template: https://github.com/Cisco-Talos/clamav/archive/refs/tags/clamav-$version.tar.gz
     post-install:
       - 'sed "s/^Example/#Example/" /app/etc/freshclam.conf.sample > /app/etc/freshclam.conf'
     cleanup:
@@ -127,6 +139,10 @@ modules:
       - type: archive
         url: https://github.com/dave-theunsub/clamtk/archive/refs/tags/v6.18.tar.gz
         sha256: 26f2916b5df37f0b85ad369a42d032307da6567eb79a08c8fe77ba063f1ce505
+        x-checker-data:
+          type: anitya
+          project-id: 9976
+          url-template: https://github.com/dave-theunsub/clamtk/archive/refs/tags/v$version.tar.gz
       - type: patch
         path: 0001-Remove-some-functionality-that-doesn-t-apply-to-Flat.patch
       - type: patch
